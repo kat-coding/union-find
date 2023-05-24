@@ -1,6 +1,7 @@
 package driver;
 
 import classes.DisjointSets;
+import classes.indexAsElement;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,5 +27,21 @@ public class Main {
 
         System.out.println(wordsets.find("gloaming") == wordsets.find("drub"));
         System.out.println(wordsets.find("drub") == wordsets.find("wordle"));
+
+        System.out.println();
+        indexAsElement setTwo = new indexAsElement(10);
+        setTwo.union(1, 4);
+        setTwo.union(2, 4);
+        setTwo.union(2, 3);
+        setTwo.union(6, 7);
+        setTwo.union(8, 6);
+
+        System.out.println(setTwo.find(1) == setTwo.find(3));
+        System.out.println(setTwo.find(7) == setTwo.find(8));
+        System.out.println(setTwo.find(1) == setTwo.find(8));
+
+        System.out.println(setTwo);
+
+        System.out.println();
     }
 }
